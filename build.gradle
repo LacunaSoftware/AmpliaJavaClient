@@ -1,0 +1,55 @@
+plugins {
+    id 'com.jfrog.bintray' version "1.8.4"
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id 'maven'
+    id 'maven-publish'
+}
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.1'
+}
+
+task fatJar(type: Jar) {
+    manifest { }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+publishing {
+    publications {
+        ClientPublish(MavenPublication) {
+            from components.java
+            groupId 'com.lacunasoftware.amplia'
+            artifactId 'amplia-client'
+            version '1.0.0'
+        }
+    }
+}
+
+bintray {
+    user = 'lacunasoftware'
+    key = System.getenv("BINTRAY_KEY")
+    publications = ['Client Publish']
+    pkg {
+        repo = 'maven'
+        name = 'amplia-client'
+        userOrg = user
+        licenses = ['Unlicense']
+        vcsUrl = 'https://github.com/LacunaSoftware/AmpliaJavaClient'
+        version {
+            name = '1.0.0'
+            desc = 'Classes to consume Lacuna Software Amplia'
+            vcsTag = '1.0.0'
+        }
+    }
+}
