@@ -14,16 +14,16 @@ class RestClient {
 	private String endpointUrl;
 	private String apiKey;
 
-	public RestClient(String endpointUrl) {
+	RestClient(String endpointUrl) {
 		this.endpointUrl = endpointUrl;
 	}
 
-	public RestClient(String endpointUrl, String apiKey) {
+	RestClient(String endpointUrl, String apiKey) {
 		this.endpointUrl = endpointUrl;
 		this.apiKey = apiKey;
 	}
 
-	public <TResponse> TResponse get(String requestUri, final Class<TResponse> valueType) throws RestException {
+	<TResponse> TResponse get(String requestUri, final Class<TResponse> valueType) throws RestException {
 		return get(requestUri, new TypeReference<TResponse>() {
 			@Override
 			public Type getType() {
@@ -32,7 +32,7 @@ class RestClient {
 		});
 	}
 
-	public <TResponse> TResponse get(String requestUri, TypeReference<TResponse> typeReference) throws RestException {
+	<TResponse> TResponse get(String requestUri, TypeReference<TResponse> typeReference) throws RestException {
 
 		String verb = "GET";
 		String requestUrl = endpointUrl + requestUri;
@@ -62,7 +62,7 @@ class RestClient {
 		return response;
 	}
 
-	public <TRequest, TResponse> TResponse post(String requestUri, TRequest request, final Class<TResponse> valueType) throws RestException {
+	<TRequest, TResponse> TResponse post(String requestUri, TRequest request, final Class<TResponse> valueType) throws RestException {
 		return post(requestUri, request, new TypeReference<TResponse>() {
 			@Override
 			public Type getType() {
@@ -71,7 +71,7 @@ class RestClient {
 		});
 	}
 
-	public <TRequest, TResponse> TResponse post(String requestUri, TRequest request, TypeReference<TResponse> typeReference) throws RestException {
+	<TRequest, TResponse> TResponse post(String requestUri, TRequest request, TypeReference<TResponse> typeReference) throws RestException {
 
 		String verb = "POST";
 		String requestUrl = endpointUrl + requestUri;
@@ -111,7 +111,7 @@ class RestClient {
 		return response;
 	}
 
-	public void delete(String requestUri) throws RestException {
+	void delete(String requestUri) throws RestException {
 
 		String verb = "DELETE";
 		String requestUrl = endpointUrl + requestUri;

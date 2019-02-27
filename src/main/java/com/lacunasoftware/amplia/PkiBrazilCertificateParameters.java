@@ -1,7 +1,5 @@
 package com.lacunasoftware.amplia;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -46,12 +44,7 @@ public class PkiBrazilCertificateParameters extends CertificateParameters {
 		this.phoneNumber = model.getPhoneNumber();
 
 		if (model.getBirthDate() != null) {
-			SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
-			try {
-				this.birthDate = fmt.parse(model.getBirthDate());
-			} catch (ParseException ex) {
-				// Do nothing
-			}
+			this.birthDate = Util.parseApiDate(model.getBirthDate());
 		}
 	}
 
@@ -196,7 +189,7 @@ public class PkiBrazilCertificateParameters extends CertificateParameters {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public PkiBrazilCertificateParametersModel toModel() {
+	PkiBrazilCertificateParametersModel toModel() {
 		PkiBrazilCertificateParametersModel model = new PkiBrazilCertificateParametersModel();
 		model.setName(name);
 		model.setEmailAddress(emailAddress);
@@ -204,8 +197,7 @@ public class PkiBrazilCertificateParameters extends CertificateParameters {
 		model.setCompanyName(companyName);
 		model.setCpf(cpf);
 		if (birthDate != null) {
-			SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
-			model.setBirthDate(formatter.format(birthDate));
+			model.setBirthDate(Util.formatToApiDate(birthDate));
 		}
 		model.setOabUF(oabUF);
 		model.setOabNumero(oabNumero);

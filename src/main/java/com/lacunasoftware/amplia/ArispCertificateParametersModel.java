@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ArispCertificateParametersModel extends CertificateParametersModel {
-	public enum ArispRoles {
+class ArispCertificateParametersModel extends CertificateParametersModel {
+	enum ArispRoles {
 		Tabeliao, Substituto, Escrevente
 	}
 

@@ -10,11 +10,9 @@ public enum CertificateFormats {
 
 	private String value;
 
-
 	CertificateFormats(String value) {
 		this.value = value;
 	}
-
 
 	public String getValue() {
 		return value;

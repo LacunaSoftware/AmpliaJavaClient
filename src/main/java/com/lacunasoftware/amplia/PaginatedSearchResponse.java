@@ -3,7 +3,6 @@ package com.lacunasoftware.amplia;
 import java.util.List;
 
 public class PaginatedSearchResponse<T> {
-
 	private List<T> items;
 	private int totalCount;
 

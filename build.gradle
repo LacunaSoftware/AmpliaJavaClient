@@ -39,7 +39,7 @@ publishing {
 bintray {
     user = 'lacunasoftware'
     key = System.getenv("BINTRAY_KEY")
-    publications = ['Client Publish']
+    publications = ['ClientPublish']
     pkg {
         repo = 'maven'
         name = 'amplia-client'

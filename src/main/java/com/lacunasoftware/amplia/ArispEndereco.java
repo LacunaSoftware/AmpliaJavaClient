@@ -10,6 +10,9 @@ public class ArispEndereco {
 	private String estado;
 	private String cep;
 
+	public ArispEndereco() {
+
+	}
 
 	ArispEndereco(ArispEnderecoModel model) {
 		this.logradouro = model.getLogradouro();
@@ -87,7 +90,7 @@ public class ArispEndereco {
 		this.cep = cep;
 	}
 
-	public ArispEnderecoModel toModel() {
+	ArispEnderecoModel toModel() {
 		ArispEnderecoModel model = new ArispEnderecoModel();
 		model.setLogradouro(logradouro);
 		model.setNumero(numero);

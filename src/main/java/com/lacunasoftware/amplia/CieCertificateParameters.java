@@ -1,8 +1,8 @@
 package com.lacunasoftware.amplia;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
+
 
 public class CieCertificateParameters extends CertificateParameters {
 	private String name;
@@ -36,12 +36,7 @@ public class CieCertificateParameters extends CertificateParameters {
 		this.course = model.getCourse();
 
 		if (model.getBirthDate() != null) {
-			SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
-			try {
-				this.birthDate = fmt.parse(model.getBirthDate());
-			} catch (ParseException ex) {
-				// Do nothing
-			}
+			this.birthDate = Util.parseApiDate(model.getBirthDate());
 		}
 
 		if (model.getInstitution() != null) {
@@ -138,13 +133,13 @@ public class CieCertificateParameters extends CertificateParameters {
 		this.course = course;
 	}
 
-	public CieCertificateParametersModel toModel() {
+	@Override
+	CieCertificateParametersModel toModel() {
 		CieCertificateParametersModel model = (CieCertificateParametersModel) super.toModel();
 		model.setName(name);
 		model.setEea(eea);
 		if (birthDate != null) {
-			SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
-			model.setBirthDate(formatter.format(birthDate));
+			model.setBirthDate(Util.formatToApiDate(birthDate));
 		}
 		model.setCpf(cpf);
 		model.setRegistrationNumber(registrationNumber);

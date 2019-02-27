@@ -17,7 +17,7 @@ public abstract class CertificateParameters {
 		return format;
 	}
 
-	public static String encode(CertificateParameters parameters) throws IOException {
+	static String encode(CertificateParameters parameters) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		StringWriter writer = new StringWriter();
 		mapper.writeValue(writer, parameters);
@@ -65,7 +65,7 @@ public abstract class CertificateParameters {
 		throw new InvalidParameterException(String.format("Certificate format not supported: %s", format.toString()));
 	}
 
-	public CertificateParametersModel toModel() {
+	CertificateParametersModel toModel() {
 		CertificateParametersModel model = new CertificateParametersModel();
 		model.setFormat(CertificateParametersModel.CertificateFormats.valueOf(format.getValue()));
 		return model;

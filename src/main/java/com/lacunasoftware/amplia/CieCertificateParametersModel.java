@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CieCertificateParametersModel extends CertificateParametersModel {
+class CieCertificateParametersModel extends CertificateParametersModel {
 	private String name = null;
 	private String eea = null;
 	private String birthDate = null;
@@ -21,90 +21,90 @@ public class CieCertificateParametersModel extends CertificateParametersModel {
 
 
 	@JsonProperty("name")
-	public String getName() {
+	String getName() {
 		return name;
 	}
-	public void setName(String name) {
+	void setName(String name) {
 		this.name = name;
 	}
 
 	@JsonProperty("eea")
-	public String getEea() {
+	String getEea() {
 		return eea;
 	}
-	public void setEea(String eea) {
+	void setEea(String eea) {
 		this.eea = eea;
 	}
 
 	@JsonProperty("birthDate")
-	public String getBirthDate() {
+	String getBirthDate() {
 		return birthDate;
 	}
-	public void setBirthDate(String birthDate) {
+	void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
 
 	@JsonProperty("cpf")
-	public String getCpf() {
+	String getCpf() {
 		return cpf;
 	}
-	public void setCpf(String cpf) {
+	void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
 	@JsonProperty("registrationNumber")
-	public String getRegistrationNumber() {
+	String getRegistrationNumber() {
 		return registrationNumber;
 	}
-	public void setRegistrationNumber(String registrationNumber) {
+	void setRegistrationNumber(String registrationNumber) {
 		this.registrationNumber = registrationNumber;
 	}
 
 	@JsonProperty("idNumber")
-	public String getIdNumber() {
+	String getIdNumber() {
 		return idNumber;
 	}
-	public void setIdNumber(String idNumber) {
+	void setIdNumber(String idNumber) {
 		this.idNumber = idNumber;
 	}
 
 	@JsonProperty("idIssuer")
-	public String getIdIssuer() {
+	String getIdIssuer() {
 		return idIssuer;
 	}
-	public void setIdIssuer(String idIssuer) {
+	void setIdIssuer(String idIssuer) {
 		this.idIssuer = idIssuer;
 	}
 
 	@JsonProperty("idIssuerState")
-	public String getIdIssuerState() {
+	String getIdIssuerState() {
 		return idIssuerState;
 	}
-	public void setIdIssuerState(String idIssuerState) {
+	void setIdIssuerState(String idIssuerState) {
 		this.idIssuerState = idIssuerState;
 	}
 
 	@JsonProperty("institution")
-	public CieInstitutionModel getInstitution() {
+	CieInstitutionModel getInstitution() {
 		return institution;
 	}
-	public void setInstitution(CieInstitutionModel institution) {
+	void setInstitution(CieInstitutionModel institution) {
 		this.institution = institution;
 	}
 
 	@JsonProperty("degree")
-	public String getDegree() {
+	String getDegree() {
 		return degree;
 	}
-	public void setDegree(String degree) {
+	void setDegree(String degree) {
 		this.degree = degree;
 	}
 
 	@JsonProperty("course")
-	public String getCourse() {
+	String getCourse() {
 		return course;
 	}
-	public void setCourse(String course) {
+	void setCourse(String course) {
 		this.course = course;
 	}
 }

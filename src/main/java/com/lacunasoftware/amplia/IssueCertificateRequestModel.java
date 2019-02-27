@@ -6,32 +6,32 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class IssueCertificateRequestModel {
+class IssueCertificateRequestModel {
 	private String orderId;
 	private String csr;
 	private String keyId;
 
 	@JsonProperty("orderId")
-	public String getOrderId() {
+	String getOrderId() {
 		return orderId;
 	}
-	public void setOrderId(String orderId) {
+	void setOrderId(String orderId) {
 		this.orderId = orderId;
 	}
 
 	@JsonProperty("csr")
-	public String getCsr() {
+	String getCsr() {
 		return csr;
 	}
-	public void setCsr(String csr) {
+	void setCsr(String csr) {
 		this.csr = csr;
 	}
 
 	@JsonProperty("keyId")
-	public String getKeyId() {
+	String getKeyId() {
 		return keyId;
 	}
-	public void setKeyId(String keyId) {
+	void setKeyId(String keyId) {
 		this.keyId = keyId;
 	}
 }

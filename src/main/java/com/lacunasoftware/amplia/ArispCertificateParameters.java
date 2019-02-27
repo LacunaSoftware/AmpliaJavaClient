@@ -70,7 +70,7 @@ public class ArispCertificateParameters extends CertificateParameters {
 	}
 
 	@Override
-	public ArispCertificateParametersModel toModel() {
+	ArispCertificateParametersModel toModel() {
 		ArispCertificateParametersModel model = (ArispCertificateParametersModel) super.toModel();
 		model.setNome(nome);
 		model.setCpf(cpf);

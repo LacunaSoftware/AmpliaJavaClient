@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OrderSummaryModel {
+class OrderSummaryModel {
 	public enum OrderStatus {
 		Pending, Locket, Issued
 	}
@@ -30,90 +30,90 @@ public class OrderSummaryModel {
 	private CertificateFormats format = null;
 
 	@JsonProperty("id")
-	public String getId() {
+	String getId() {
 		return id;
 	}
-	public void setId(String id) {
+	void setId(String id) {
 		this.id = id;
 	}
 
 	@JsonProperty("subscriptionId")
-	public String getSubscriptionId() {
+	String getSubscriptionId() {
 		return subscriptionId;
 	}
-	public void setSubscriptionId(String subscriptionId) {
+	void setSubscriptionId(String subscriptionId) {
 		this.subscriptionId = subscriptionId;
 	}
 
 	@JsonProperty("dateCreated")
-	public String getDateCreated() {
+	String getDateCreated() {
 		return dateCreated;
 	}
-	public void setDateCreated(String dateCreated) {
+	void setDateCreated(String dateCreated) {
 		this.dateCreated = dateCreated;
 	}
 
 	@JsonProperty("caId")
-	public String getCAId() {
+	String getCAId() {
 		return caId;
 	}
-	public void setCAId(String caId) {
+	void setCAId(String caId) {
 		this.caId = caId;
 	}
 
 	@JsonProperty("templateId")
-	public String getTemplateId() {
+	String getTemplateId() {
 		return templateId;
 	}
-	public void setTemplateId(String templateId) {
+	void setTemplateId(String templateId) {
 		this.templateId = templateId;
 	}
 
 	@JsonProperty("alias")
-	public String getAlias() {
+	String getAlias() {
 		return alias;
 	}
-	public void setAlias(String alias) {
+	void setAlias(String alias) {
 		this.alias = alias;
 	}
 
 	@JsonProperty("emailAddress")
-	public String getEmailAddress() {
+	String getEmailAddress() {
 		return emailAddress;
 	}
-	public void setEmailAddress(String emailAddress) {
+	void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
 
 	@JsonProperty("certificateId")
-	public String getCertificateId() {
+	String getCertificateId() {
 		return certificateId;
 	}
-	public void setCertificateId(String certificateId) {
+	void setCertificateId(String certificateId) {
 		this.certificateId = certificateId;
 	}
 
 	@JsonProperty("status")
-	public OrderStatus getStatus() {
+	OrderStatus getStatus() {
 		return status;
 	}
-	public void setStatus(OrderStatus status) {
+	void setStatus(OrderStatus status) {
 		this.status = status;
 	}
 
 	@JsonProperty("kind")
-	public CertificateKinds getKind() {
+	CertificateKinds getKind() {
 		return kind;
 	}
-	public void setKind(CertificateKinds kind) {
+	void setKind(CertificateKinds kind) {
 		this.kind = kind;
 	}
 
 	@JsonProperty("format")
-	public CertificateFormats getFormat() {
+	CertificateFormats getFormat() {
 		return format;
 	}
-	public void setFormat(CertificateFormats format) {
+	void setFormat(CertificateFormats format) {
 		this.format = format;
 	}
 }

@@ -37,7 +37,7 @@ public class CieInstitution {
 		this.state = state;
 	}
 
-	public CieInstitutionModel toModel() {
+	CieInstitutionModel toModel() {
 		CieInstitutionModel model = new CieInstitutionModel();
 		model.setName(name);
 		model.setCity(city);

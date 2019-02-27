@@ -13,18 +13,18 @@ class BaseCertificateModel extends CertificateSummaryModel {
 
 
 	@JsonProperty("info")
-	public CertificateInfoModel getInfo() {
+	CertificateInfoModel getInfo() {
 		return info;
 	}
-	public void setInfo(CertificateInfoModel info) {
+	void setInfo(CertificateInfoModel info) {
 		this.info = info;
 	}
 
 	@JsonProperty("content")
-	public byte[] getContent() {
+	byte[] getContent() {
 		return content;
 	}
-	public void setContent(byte[] content) {
+	void setContent(byte[] content) {
 		this.content = content;
 	}
 }
