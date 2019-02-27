@@ -46,12 +46,7 @@ public class PkiBrazilCertificateParameters extends CertificateParameters {
 		this.phoneNumber = model.getPhoneNumber();
 
 		if (model.getBirthDate() != null) {
-			SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
-			try {
-				this.birthDate = fmt.parse(model.getBirthDate());
-			} catch (ParseException ex) {
-				// Do nothing
-			}
+			this.birthDate = Util.parseApiDate(model.getBirthDate());
 		}
 	}
 
@@ -204,8 +199,7 @@ public class PkiBrazilCertificateParameters extends CertificateParameters {
 		model.setCompanyName(companyName);
 		model.setCpf(cpf);
 		if (birthDate != null) {
-			SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
-			model.setBirthDate(formatter.format(birthDate));
+			model.setBirthDate(Util.formatToApiDate(birthDate));
 		}
 		model.setOabUF(oabUF);
 		model.setOabNumero(oabNumero);

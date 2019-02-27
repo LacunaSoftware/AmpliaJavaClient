@@ -4,8 +4,8 @@ public class PaginatedSearchParams {
 	private static final int DEFAULT_LIMIT = 10;
 
 	private String q;
-	private Integer limit = DEFAULT_LIMIT;
-	private Integer offset;
+	private int limit = DEFAULT_LIMIT;
+	private int offset;
 	private PaginationOrders order;
 
 	public String getQ() {

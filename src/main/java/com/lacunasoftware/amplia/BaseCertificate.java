@@ -73,21 +73,11 @@ public class BaseCertificate {
 			this.ocspUris = model.getInfo().getOcspUris();
 
 			if (model.getInfo().getValidityStart() != null) {
-				SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
-				try {
-					this.validityStart = fmt.parse(model.getInfo().getValidityStart());
-				} catch (ParseException ex) {
-					// Do nothing
-				}
+				this.validityStart = Util.parseApiDate(model.getInfo().getValidityStart());
 			}
 
 			if (model.getInfo().getValidityEnd() != null) {
-				SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ");
-				try {
-					this.validityEnd = fmt.parse(model.getInfo().getValidityEnd());
-				} catch (ParseException ex) {
-					// Do nothing
-				}
+				this.validityEnd = Util.parseApiDate(model.getInfo().getValidityEnd());
 			}
 
 			if (model.getInfo().getSubjectName() != null) {

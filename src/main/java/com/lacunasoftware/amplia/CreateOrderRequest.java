@@ -1,7 +1,6 @@
 package com.lacunasoftware.amplia;
 
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -80,8 +79,7 @@ public class CreateOrderRequest<TParameters extends CertificateParameters> {
 		}
 
 		if (validityEnd != null) {
-			SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
-			model.setValidityEnd(formatter.format(validityEnd));
+			model.setValidityEnd(Util.formatToApiDate(validityEnd));
 		}
 
 		return model;
