@@ -74,7 +74,8 @@ public class CnbCACertificateParameters extends CertificateParameters {
 		this.postalCode = postalCode;
 	}
 
-	public CnbCACertificateParametersModel toModel() {
+	@Override
+	CnbCACertificateParametersModel toModel() {
 		CnbCACertificateParametersModel model = (CnbCACertificateParametersModel) super.toModel();
 		model.setName(name);
 		model.setCns(cns);

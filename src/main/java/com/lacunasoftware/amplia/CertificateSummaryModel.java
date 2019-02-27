@@ -30,106 +30,106 @@ class CertificateSummaryModel {
 
 
 	@JsonProperty("id")
-	public String getId() {
+	String getId() {
 		return id;
 	}
-	public void setId(String id) {
+	void setId(String id) {
 		this.id = id;
 	}
 
 	@JsonProperty("subscriptionId")
-	public String getSubscriptionId() {
+	String getSubscriptionId() {
 		return subscriptionId;
 	}
-	public void setSubscriptionId(String subscriptionId) {
+	void setSubscriptionId(String subscriptionId) {
 		this.subscriptionId = subscriptionId;
 	}
 
 	@JsonProperty("caId")
-	public String getCAId() {
+	String getCAId() {
 		return caId;
 	}
-	public void setCAId(String caId) {
+	void setCAId(String caId) {
 		this.caId = caId;
 	}
 
 	@JsonProperty("keyId")
-	public String getKeyId() {
+	String getKeyId() {
 		return keyId;
 	}
-	public void setKeyId(String keyId) {
+	void setKeyId(String keyId) {
 		this.keyId = keyId;
 	}
 
 	@JsonProperty("dateIssued")
-	public String getDateIssued() {
+	String getDateIssued() {
 		return dateIssued;
 	}
-	public void setDateIssued(String dateIssued) {
+	void setDateIssued(String dateIssued) {
 		this.dateIssued = dateIssued;
 	}
 
 	@JsonProperty("dateExpires")
-	public String getDateExpires() {
+	String getDateExpires() {
 		return dateExpires;
 	}
-	public void setDateExpires(String dateExpires) {
+	void setDateExpires(String dateExpires) {
 		this.dateExpires = dateExpires;
 	}
 
 	@JsonProperty("dateRevoked")
-	public String getDateRevoked() {
+	String getDateRevoked() {
 		return dateRevoked;
 	}
-	public void setDateRevoked(String dateRevoked) {
+	void setDateRevoked(String dateRevoked) {
 		this.dateRevoked = dateRevoked;
 	}
 
 	@JsonProperty("alias")
-	public String getAlias() {
+	String getAlias() {
 		return alias;
 	}
-	public void setAlias(String alias) {
+	void setAlias(String alias) {
 		this.alias = alias;
 	}
 
 	@JsonProperty("subjectDisplayName")
-	public String getSubjectDisplayName() {
+	String getSubjectDisplayName() {
 		return subjectDisplayName;
 	}
-	public void setSubjectDisplayName(String subjectDisplayName) {
+	void setSubjectDisplayName(String subjectDisplayName) {
 		this.subjectDisplayName = subjectDisplayName;
 	}
 
 	@JsonProperty("serialNumber")
-	public String getSerialNumber() {
+	String getSerialNumber() {
 		return serialNumber;
 	}
-	public void setSerialNumber(String serialNumber) {
+	void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
 	}
 
 	@JsonProperty("isCa")
-	public Boolean isCA() {
+	Boolean isCA() {
 		return isCA;
 	}
-	public void setIsCA(Boolean isCA) {
+	void setIsCA(Boolean isCA) {
 		this.isCA = isCA;
 	}
 
 	@JsonProperty("kind")
-	public CertificateKinds getKind() {
+	CertificateKinds getKind() {
 		return kind;
 	}
-	public void setKind(CertificateKinds kind) {
+	void setKind(CertificateKinds kind) {
 		this.kind = kind;
 	}
 
 	@JsonProperty("format")
-	public CertificateFormats getFormat() {
+	CertificateFormats getFormat() {
 		return format;
 	}
-	public void setFormat(CertificateFormats format) {
+	void setFormat(CertificateFormats format) {
 		this.format = format;
 	}
 }

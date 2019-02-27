@@ -10,6 +10,9 @@ public class ArispCartorioInfo {
 	private String site;
 	private String email;
 
+	public ArispCartorioInfo() {
+
+	}
 
 	ArispCartorioInfo(ArispCartorioInfoModel model) {
 		this.cns = model.getCns();
@@ -90,7 +93,7 @@ public class ArispCartorioInfo {
 		this.email = email;
 	}
 
-	public ArispCartorioInfoModel toModel() {
+	ArispCartorioInfoModel toModel() {
 		ArispCartorioInfoModel model = new ArispCartorioInfoModel();
 		model.setCns(cns);
 		model.setNumero(numero);

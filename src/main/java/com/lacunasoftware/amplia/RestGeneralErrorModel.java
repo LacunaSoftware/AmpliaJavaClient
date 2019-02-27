@@ -9,10 +9,10 @@ class RestGeneralErrorModel {
 	private String message = null;
 
 	@JsonProperty("message")
-	public String getMessage() {
+	String getMessage() {
 		return message;
 	}
-	public void setMessage(String message) {
+	void setMessage(String message) {
 		this.message = message;
 	}
 }

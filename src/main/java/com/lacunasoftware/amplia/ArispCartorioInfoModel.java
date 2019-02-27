@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ArispCartorioInfoModel {
+class ArispCartorioInfoModel {
 	private String cns = null;
 	private String numero = null;
 	private String nome = null;
@@ -18,66 +18,66 @@ public class ArispCartorioInfoModel {
 
 
 	@JsonProperty("cns")
-	public String getCns() {
+	String getCns() {
 		return cns;
 	}
-	public void setCns(String cns) {
+	void setCns(String cns) {
 		this.cns = cns;
 	}
 
 	@JsonProperty("numero")
-	public String getNumero() {
+	String getNumero() {
 		return numero;
 	}
-	public void setNumero(String numero) {
+	void setNumero(String numero) {
 		this.numero = numero;
 	}
 
 	@JsonProperty("nome")
-	public String getNome() {
+	String getNome() {
 		return nome;
 	}
-	public void setNome(String nome) {
+	void setNome(String nome) {
 		this.nome = nome;
 	}
 
 	@JsonProperty("oficial")
-	public String getOficial() {
+	String getOficial() {
 		return oficial;
 	}
-	public void setOficial(String oficial) {
+	void setOficial(String oficial) {
 		this.oficial = oficial;
 	}
 
 	@JsonProperty("endereco")
-	public ArispEnderecoModel getEndereco() {
+	ArispEnderecoModel getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(ArispEnderecoModel endereco) {
+	void setEndereco(ArispEnderecoModel endereco) {
 		this.endereco = endereco;
 	}
 
 	@JsonProperty("telefone")
-	public String getTelefone() {
+	String getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(String telefone) {
+	void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
 	@JsonProperty("site")
-	public String getSite() {
+	String getSite() {
 		return site;
 	}
-	public void setSite(String site) {
+	void setSite(String site) {
 		this.site = site;
 	}
 
 	@JsonProperty("email")
-	public String getEmail() {
+	String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
+	void setEmail(String email) {
 		this.email = email;
 	}
 }

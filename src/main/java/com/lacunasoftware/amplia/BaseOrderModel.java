@@ -6,23 +6,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BaseOrderModel extends OrderSummaryModel {
+class BaseOrderModel extends OrderSummaryModel {
 	private Boolean canDelete = null;
 	private Boolean canEdit = null;
 
 	@JsonProperty("canDelete")
-	public boolean isCanDelete() {
+	boolean isCanDelete() {
 		return canDelete;
 	}
-	public void setCanDelete(boolean canDelete) {
+	void setCanDelete(boolean canDelete) {
 		this.canDelete = canDelete;
 	}
 
 	@JsonProperty("canEdit")
-	public boolean isCanEdit() {
+	boolean isCanEdit() {
 		return canEdit;
 	}
-	public void setCanEdit(boolean canEdit) {
+	void setCanEdit(boolean canEdit) {
 		this.canEdit = canEdit;
 	}
 }

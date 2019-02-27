@@ -10,18 +10,18 @@ class RestResourceNotFoundModel extends RestGeneralErrorModel {
 	private String resourceId = null;
 
 	@JsonProperty("resourceName")
-	public String getResourceName() {
+	String getResourceName() {
 		return resourceName;
 	}
-	public void setResourceName(String resourceName) {
+	void setResourceName(String resourceName) {
 		this.resourceName = resourceName;
 	}
 
 	@JsonProperty("resourceId")
-	public String getResourceId() {
+	String getResourceId() {
 		return resourceId;
 	}
-	public void setResourceId(String resourceId) {
+	void setResourceId(String resourceId) {
 		this.resourceId = resourceId;
 	}
 }

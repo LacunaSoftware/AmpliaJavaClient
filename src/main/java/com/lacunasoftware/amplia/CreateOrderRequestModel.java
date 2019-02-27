@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CreateOrderRequestModel<TParametersModel extends CertificateParametersModel> {
+class CreateOrderRequestModel<TParametersModel extends CertificateParametersModel> {
 	public enum CertificateKinds {
 		PublicKey, Attribute
 	}
@@ -20,50 +20,50 @@ public class CreateOrderRequestModel<TParametersModel extends CertificateParamet
 
 
 	@JsonProperty("caId")
-	public String getCAId() {
+	String getCAId() {
 		return caId;
 	}
-	public void setCAId(String caId) {
+	void setCAId(String caId) {
 		this.caId = caId;
 	}
 
 	@JsonProperty("templateId")
-	public String getTemplateId() {
+	String getTemplateId() {
 		return templateId;
 	}
-	public void setTemplateId(String templateId) {
+	void setTemplateId(String templateId) {
 		this.templateId = templateId;
 	}
 
 	@JsonProperty("kind")
-	public CertificateKinds getKind() {
+	CertificateKinds getKind() {
 		return kind;
 	}
-	public void setKind(CertificateKinds kind) {
+	void setKind(CertificateKinds kind) {
 		this.kind = kind;
 	}
 
 	@JsonProperty("copyFromCertificate")
-	public String getCopyFromCertificate() {
+	String getCopyFromCertificate() {
 		return copyFromCertificate;
 	}
-	public void setCopyFromCertificate(String copyFromCertificate) {
+	void setCopyFromCertificate(String copyFromCertificate) {
 		this.copyFromCertificate = copyFromCertificate;
 	}
 
 	@JsonProperty("parameters")
-	public TParametersModel getParameters() {
+	TParametersModel getParameters() {
 		return parameters;
 	}
-	public void setParameters(TParametersModel parameters) {
+	void setParameters(TParametersModel parameters) {
 		this.parameters = parameters;
 	}
 
 	@JsonProperty("validityEnd")
-	public String getValidityEnd() {
+	String getValidityEnd() {
 		return validityEnd;
 	}
-	public void setValidityEnd(String validityEnd) {
+	void setValidityEnd(String validityEnd) {
 		this.validityEnd = validityEnd;
 	}
 }

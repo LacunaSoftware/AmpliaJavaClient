@@ -6,11 +6,9 @@ public enum CertificateKinds {
 
 	private String value;
 
-
 	CertificateKinds(String value) {
 		this.value = value;
 	}
-
 
 	public String getValue() {
 		return value;

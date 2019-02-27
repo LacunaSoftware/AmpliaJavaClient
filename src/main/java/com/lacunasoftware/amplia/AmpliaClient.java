@@ -8,8 +8,11 @@ import java.lang.reflect.Type;
 import java.net.URLEncoder;
 import java.util.*;
 
-public class AmpliaClient {
 
+/**
+ *
+ */
+public class AmpliaClient {
 	protected String apiKey;
 	private String endpointUri;
 	private RestClient restClient;
@@ -64,9 +67,9 @@ public class AmpliaClient {
 		return new Order<>(model);
 	}
 
-	public <TParameters extends CertificateParameters> Order<TParameters> getOrder(String orderId) throws RestException {
-		String typeRouteSegment = getTypedApiRoutes(((ParameterizedType)getClass().getGenericSuperclass()).getActualTypeArguments()[0]);
-		OrderModel model = getRestClient().get(String.format("api/orders/%s/%s", typeRouteSegment, orderId), OrderModel.class);
+	public <TParameters extends CertificateParameters> Order<TParameters> getOrder(String orderId, Class<TParameters> parametersType) throws RestException {
+		String typedRouteSegment = getTypedApiRoutes(parametersType);
+		OrderModel model = getRestClient().get(String.format("api/orders/%s/%s", typedRouteSegment, orderId), OrderModel.class);
 		return new Order<>(model);
 	}
 
@@ -87,42 +90,42 @@ public class AmpliaClient {
 	}
 
 	public void deleteOrder(String orderId) throws RestException {
-		getRestClient().delete(String.format("api/order/%s", orderId));
+		getRestClient().delete(String.format("api/orders/%s", orderId));
 	}
 
 	// endregion
 
 	// region Certificate
 
-	public Certificate issueCertificate(String orderId, String csr) throws RestException {
+	public <TParameters extends CertificateParameters> Certificate<TParameters> issueCertificate(String orderId, String csr) throws RestException {
 		return issueCertificate(orderId, csr, null);
 	}
 
-	public Certificate issueCertificate(String orderId, String csr, String keyId) throws RestException {
+	public <TParameters extends CertificateParameters> Certificate<TParameters> issueCertificate(String orderId, String csr, String keyId) throws RestException {
 		IssueCertificateRequest request = new IssueCertificateRequest();
 		request.setOrderId(orderId);
 		request.setCsr(csr);
 		request.setKeyId(keyId);
 		CertificateModel model = getRestClient().post("api/v2/certificates", request.toModel(), CertificateModel.class);
-		return new Certificate(model);
+		return new Certificate<>(model);
 	}
 
-	public PaginatedSearchResponse<Certificate> listCertificates() throws RestException {
+	public PaginatedSearchResponse<CertificateSummary> listCertificates() throws RestException {
 		return listCertificates(null);
 	}
 
-	public PaginatedSearchResponse<Certificate> listCertificates(PaginatedSearchParams searchParams) throws RestException {
+	public PaginatedSearchResponse<CertificateSummary> listCertificates(PaginatedSearchParams searchParams) throws RestException {
 		return listCertificates(searchParams, false);
 	}
 
-	public PaginatedSearchResponse<Certificate> listCertificates(PaginatedSearchParams searchParams, boolean validOnly) throws RestException {
+	public PaginatedSearchResponse<CertificateSummary> listCertificates(PaginatedSearchParams searchParams, boolean validOnly) throws RestException {
 		String uri = setPaginatedSearchParams("api/v2/certificates", searchParams != null ? searchParams : new PaginatedSearchParams()) +
 				String.format("&validonly=%s", validOnly);
-		PaginatedSearchResponse<CertificateModel> model = this.restClient.get(uri, new TypeReference<PaginatedSearchResponse<CertificateModel>>(){});
-		PaginatedSearchResponse<Certificate> response = new PaginatedSearchResponse<>();
-		response.setItems(new ArrayList<Certificate>());
-		for (CertificateModel m : model.getItems()) {
-			response.getItems().add(new Certificate(m));
+		PaginatedSearchResponseModel<CertificateSummaryModel> model = getRestClient().get(uri, new TypeReference<PaginatedSearchResponseModel<CertificateSummaryModel>>(){});
+		PaginatedSearchResponse<CertificateSummary> response = new PaginatedSearchResponse<>();
+		response.setItems(new ArrayList<CertificateSummary>());
+		for (CertificateSummaryModel m : model.getItems()) {
+			response.getItems().add(new CertificateSummary(m));
 		}
 		response.setTotalCount(model.getTotalCount());
 		return response;
@@ -133,13 +136,13 @@ public class AmpliaClient {
 	}
 
 	public <TParameters extends CertificateParameters> Certificate<TParameters> getCertificate(String certId, boolean fillContent) throws RestException {
-		String uri = String.format("api/v2/certificates/%s?fillContent=%s", certId, fillContent);
-		CertificateModel model = this.restClient.get(uri, new TypeReference<CertificateModel>(){});
+		String uri = String.format("api/v2/certificates/%s?fillContent=%s", certId, String.valueOf(fillContent));
+		CertificateModel model = getRestClient().get(uri, new TypeReference<CertificateModel>(){});
 		return new Certificate<>(model);
 	}
 
-	public void revokeCertificate(String certificateId) throws RestException {
-		getRestClient().delete(String.format("api/certificates/%s", certificateId));
+	public void revokeCertificate(String certId) throws RestException {
+		getRestClient().delete(String.format("api/certificates/%s", certId));
 	}
 
 	// endregion
@@ -161,7 +164,8 @@ public class AmpliaClient {
 			sb.append(String.format("offset=%d&", searchParams.getOffset()));
 		}
 		if (searchParams.getOrder() != null) {
-			sb.append(String.format("order=%s", searchParams.getOrder()));
+			// Note: Use the value of the PaginationOrder enum.
+			sb.append(String.format("order=%s", searchParams.getOrder().getValue()));
 		}
 
 		return sb.toString();
@@ -174,7 +178,7 @@ public class AmpliaClient {
 		return typeApiRoutes.get(certFormat);
 	}
 
-	private String getTypedApiRoutes(Type parametersType) {
+	private <TParameters extends CertificateParameters> String getTypedApiRoutes(Class<TParameters> parametersType) {
 		CertificateFormats certFormat;
 		if (parametersType.equals(PkiBrazilCertificateParameters.class)) {
 			certFormat = CertificateFormats.PKI_BRAZIL;

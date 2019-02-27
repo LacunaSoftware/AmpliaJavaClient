@@ -6,15 +6,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OrderModel extends BaseOrderModel {
+class OrderModel extends BaseOrderModel {
 	private Object parameters = null;
 
 
 	@JsonProperty("parameters")
-	public Object getParameters() {
+	Object getParameters() {
 		return parameters;
 	}
-	public void setParameters(Object parameters) {
+	void setParameters(Object parameters) {
 		this.parameters = parameters;
 	}
 }

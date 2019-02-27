@@ -23,82 +23,82 @@ class CertificateInfoModel {
 
 
 	@JsonProperty("subjectName")
-	public NameModel getSubjectName() {
+	NameModel getSubjectName() {
 		return subjectName;
 	}
-	public void setSubjectName(NameModel subjectName) {
+	void setSubjectName(NameModel subjectName) {
 		this.subjectName = subjectName;
 	}
 
 	@JsonProperty("emailAddress")
-	public String getEmailAddress() {
+	String getEmailAddress() {
 		return emailAddress;
 	}
-	public void setEmailAddress(String emailAddress) {
+	void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
 
 	@JsonProperty("issuerName")
-	public NameModel getIssuerName() {
+	NameModel getIssuerName() {
 		return issuerName;
 	}
-	public void setIssuerName(NameModel issuerName) {
+	void setIssuerName(NameModel issuerName) {
 		this.issuerName = issuerName;
 	}
 
 	@JsonProperty("serialNumber")
-	public String getSerialNumber() {
+	String getSerialNumber() {
 		return serialNumber;
 	}
-	public void setSerialNumber(String serialNumber) {
+	void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
 	}
 
 	@JsonProperty("validityStart")
-	public String getValidityStart() {
+	String getValidityStart() {
 		return validityStart;
 	}
-	public void setValidityStart(String validityStart) {
+	void setValidityStart(String validityStart) {
 		this.validityStart = validityStart;
 	}
 
 	@JsonProperty("validityEnd")
-	public String getValidityEnd() {
+	String getValidityEnd() {
 		return validityEnd;
 	}
-	public void setValidityEnd(String validityEnd) {
+	void setValidityEnd(String validityEnd) {
 		this.validityEnd = validityEnd;
 	}
 
 	@JsonProperty("crlDistributionPoints")
-	public List<String> getCrlDistributionPoints() {
+	List<String> getCrlDistributionPoints() {
 		return crlDistributionPoints;
 	}
-	public void setCrlDistributionPoints(List<String> crlDistributionPoints) {
+	void setCrlDistributionPoints(List<String> crlDistributionPoints) {
 		this.crlDistributionPoints = crlDistributionPoints;
 	}
 
 	@JsonProperty("ocspUris")
-	public List<String> getOcspUris() {
+	List<String> getOcspUris() {
 		return ocspUris;
 	}
-	public void setOcspUris(List<String> ocspUris) {
+	void setOcspUris(List<String> ocspUris) {
 		this.ocspUris = ocspUris;
 	}
 
 	@JsonProperty("isSelfSigned")
-	public Boolean isSelfSigned() {
+	Boolean isSelfSigned() {
 		return isSelfSigned;
 	}
-	public void setSelfSigned(Boolean selfSigned) {
+	void setSelfSigned(Boolean selfSigned) {
 		isSelfSigned = selfSigned;
 	}
 
 	@JsonProperty("isCA")
-	public Boolean isCA() {
+	Boolean isCA() {
 		return isCA;
 	}
-	public void setIsCA(Boolean isCA) {
+	void setIsCA(Boolean isCA) {
 		this.isCA = isCA;
 	}
 }
