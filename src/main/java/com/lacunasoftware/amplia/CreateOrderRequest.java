@@ -61,7 +61,7 @@ public class CreateOrderRequest<TParameters extends CertificateParameters> {
 		this.validityEnd = validityEnd;
 	}
 
-	public CreateOrderRequestModel<CertificateParametersModel> toModel() {
+	CreateOrderRequestModel<CertificateParametersModel> toModel() {
 		CreateOrderRequestModel<CertificateParametersModel> model = new CreateOrderRequestModel<>();
 		model.setCAId(caId);
 		model.setTemplateId(templateId);

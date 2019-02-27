@@ -1,8 +1,8 @@
 package com.lacunasoftware.amplia;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
+
 
 public class CieCertificateParameters extends CertificateParameters {
 	private String name;
@@ -133,7 +133,8 @@ public class CieCertificateParameters extends CertificateParameters {
 		this.course = course;
 	}
 
-	public CieCertificateParametersModel toModel() {
+	@Override
+	CieCertificateParametersModel toModel() {
 		CieCertificateParametersModel model = (CieCertificateParametersModel) super.toModel();
 		model.setName(name);
 		model.setEea(eea);

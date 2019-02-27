@@ -1,7 +1,5 @@
 package com.lacunasoftware.amplia;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +20,7 @@ public class BaseCertificate {
 	private CertificateFormats format;
 
 
-	public BaseCertificate(BaseCertificateModel model) {
+	BaseCertificate(BaseCertificateModel model) {
 		this.id = model.getId();
 		this.caId = model.getCAId();
 		this.alias = model.getAlias();

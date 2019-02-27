@@ -8,8 +8,11 @@ import java.lang.reflect.Type;
 import java.net.URLEncoder;
 import java.util.*;
 
-public class AmpliaClient {
 
+/**
+ *
+ */
+public class AmpliaClient {
 	protected String apiKey;
 	private String endpointUri;
 	private RestClient restClient;

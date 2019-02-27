@@ -30,7 +30,7 @@ public class IssueCertificateRequest {
 		this.keyId = keyId;
 	}
 
-	public IssueCertificateRequestModel toModel() {
+	IssueCertificateRequestModel toModel() {
 		IssueCertificateRequestModel model = new IssueCertificateRequestModel();
 		model.setOrderId(orderId);
 		model.setCsr(csr);

@@ -23,7 +23,8 @@ public class CnbCertificateParameters extends CertificateParameters {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public CnbCertificateParametersModel toModel() {
+	@Override
+	CnbCertificateParametersModel toModel() {
 		CnbCertificateParametersModel model = (CnbCertificateParametersModel) super.toModel();
 		model.setPhoneNumber(phoneNumber);
 		return model;

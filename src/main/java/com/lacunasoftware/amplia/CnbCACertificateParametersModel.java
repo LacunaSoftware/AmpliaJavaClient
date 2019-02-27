@@ -1,7 +1,12 @@
 package com.lacunasoftware.amplia;
 
 
-public class CnbCACertificateParametersModel extends CertificateParametersModel {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+@JsonIgnoreProperties
+class CnbCACertificateParametersModel extends CertificateParametersModel {
 	private String name;
 	private String cns;
 	private String streetAddress;
@@ -9,56 +14,51 @@ public class CnbCACertificateParametersModel extends CertificateParametersModel 
 	private String stateName;
 	private String postalCode;
 
-	@Override
-	public CertificateFormats getFormat() {
-		return CertificateFormats.CnbCA;
-	}
-
-	public String getName() {
+	@JsonProperty("name")
+	String getName() {
 		return name;
 	}
-
-	public void setName(String name) {
+	void setName(String name) {
 		this.name = name;
 	}
 
-	public String getCns() {
+	@JsonProperty("cns")
+	String getCns() {
 		return cns;
 	}
-
-	public void setCns(String cns) {
+	void setCns(String cns) {
 		this.cns = cns;
 	}
 
-	public String getStreetAddress() {
+	@JsonProperty("streetAddress")
+	String getStreetAddress() {
 		return streetAddress;
 	}
-
-	public void setStreetAddress(String streetAddress) {
+	void setStreetAddress(String streetAddress) {
 		this.streetAddress = streetAddress;
 	}
 
-	public String getLocality() {
+	@JsonProperty("locality")
+	String getLocality() {
 		return locality;
 	}
-
-	public void setLocality(String locality) {
+	void setLocality(String locality) {
 		this.locality = locality;
 	}
 
-	public String getStateName() {
+	@JsonProperty("stateName")
+	String getStateName() {
 		return stateName;
 	}
-
-	public void setStateName(String stateName) {
+	void setStateName(String stateName) {
 		this.stateName = stateName;
 	}
 
-	public String getPostalCode() {
+	@JsonProperty("postalCode")
+	String getPostalCode() {
 		return postalCode;
 	}
-
-	public void setPostalCode(String postalCode) {
+	void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
 }

@@ -1,7 +1,5 @@
 package com.lacunasoftware.amplia;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -191,7 +189,7 @@ public class PkiBrazilCertificateParameters extends CertificateParameters {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public PkiBrazilCertificateParametersModel toModel() {
+	PkiBrazilCertificateParametersModel toModel() {
 		PkiBrazilCertificateParametersModel model = new PkiBrazilCertificateParametersModel();
 		model.setName(name);
 		model.setEmailAddress(emailAddress);

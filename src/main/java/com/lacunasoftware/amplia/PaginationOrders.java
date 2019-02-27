@@ -6,11 +6,9 @@ public enum PaginationOrders {
 
 	private String value;
 
-
 	PaginationOrders(String value) {
 		this.value = value;
 	}
-
 
 	public String getValue() {
 		return value;

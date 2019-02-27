@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CertificateParametersModel {
+class CertificateParametersModel {
 	public enum CertificateFormats {
 		PkiBrazil, Ssl, Cnb, CnbCA, Cie, Arisp
 	}
@@ -15,10 +15,10 @@ public class CertificateParametersModel {
 
 
 	@JsonProperty("format")
-	public CertificateFormats getFormat() {
+	CertificateFormats getFormat() {
 		return format;
 	}
-	public void setFormat(CertificateFormats format) {
+	void setFormat(CertificateFormats format) {
 		this.format = format;
 	}
 }

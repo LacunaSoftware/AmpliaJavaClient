@@ -26,130 +26,130 @@ class NameModel {
 	private Map<String, List<String>> allValues = null;
 
 	@JsonProperty("country")
-	public String getCountry() {
+	String getCountry() {
 		return country;
 	}
-	public void setCountry(String country) {
+	void setCountry(String country) {
 		this.country = country;
 	}
 
 	@JsonProperty("organization")
-	public String getOrganization() {
+	String getOrganization() {
 		return organization;
 	}
-	public void setOrganization(String organization) {
+	void setOrganization(String organization) {
 		this.organization = organization;
 	}
 
 	@JsonProperty("organizationUnit")
-	public String getOrganizationUnit() {
+	String getOrganizationUnit() {
 		return organizationUnit;
 	}
-	public void setOrganizationUnit(String organizationUnit) {
+	void setOrganizationUnit(String organizationUnit) {
 		this.organizationUnit = organizationUnit;
 	}
 
 	@JsonProperty("dnQualifer")
-	public String getDNQualifier() {
+	String getDNQualifier() {
 		return dnQualifier;
 	}
-	public void setDNQualifier(String dnQualifier) {
+	void setDNQualifier(String dnQualifier) {
 		this.dnQualifier = dnQualifier;
 	}
 
 	@JsonProperty("stateName")
-	public String getStateName() {
+	String getStateName() {
 		return stateName;
 	}
-	public void setStateName(String stateName) {
+	void setStateName(String stateName) {
 		this.stateName = stateName;
 	}
 
 	@JsonProperty("commonName")
-	public String getCommonName() {
+	String getCommonName() {
 		return commonName;
 	}
-	public void setCommonName(String commonName) {
+	void setCommonName(String commonName) {
 		this.commonName = commonName;
 	}
 
 	@JsonProperty("serialNumber")
-	public String getSerialNumber() {
+	String getSerialNumber() {
 		return serialNumber;
 	}
-	public void setSerialNumber(String serialNumber) {
+	void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
 	}
 
 	@JsonProperty("locality")
-	public String getLocality() {
+	String getLocality() {
 		return locality;
 	}
-	public void setLocality(String locality) {
+	void setLocality(String locality) {
 		this.locality = locality;
 	}
 
 	@JsonProperty("title")
-	public String getTitle() {
+	String getTitle() {
 		return title;
 	}
-	public void setTitle(String title) {
+	void setTitle(String title) {
 		this.title = title;
 	}
 
 	@JsonProperty("surname")
-	public String getSurname() {
+	String getSurname() {
 		return surname;
 	}
-	public void setSurname(String surname) {
+	void setSurname(String surname) {
 		this.surname = surname;
 	}
 
 	@JsonProperty("givenName")
-	public String getGivenName() {
+	String getGivenName() {
 		return givenName;
 	}
-	public void setGivenName(String givenName) {
+	void setGivenName(String givenName) {
 		this.givenName = givenName;
 	}
 
 	@JsonProperty("initials")
-	public String getInitials() {
+	String getInitials() {
 		return initials;
 	}
-	public void setInitials(String initials) {
+	void setInitials(String initials) {
 		this.initials = initials;
 	}
 
 	@JsonProperty("pseudonym")
-	public String getPseudonym() {
+	String getPseudonym() {
 		return pseudonym;
 	}
-	public void setPseudonym(String pseudonym) {
+	void setPseudonym(String pseudonym) {
 		this.pseudonym = pseudonym;
 	}
 
 	@JsonProperty("generationQualifier")
-	public String getGenerationQualifier() {
+	String getGenerationQualifier() {
 		return generationQualifier;
 	}
-	public void setGenerationQualifier(String generationQualifier) {
+	void setGenerationQualifier(String generationQualifier) {
 		this.generationQualifier = generationQualifier;
 	}
 
 	@JsonProperty("emailAddress")
-	public String getEmailAddress() {
+	String getEmailAddress() {
 		return emailAddress;
 	}
-	public void setEmailAddress(String emailAddress) {
+	void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
 
 	@JsonProperty("allValues")
-	public Map<String, List<String>> getAllValues() {
+	Map<String, List<String>> getAllValues() {
 		return allValues;
 	}
-	public void setAllValues(Map<String, List<String>> allValues) {
+	void setAllValues(Map<String, List<String>> allValues) {
 		this.allValues = allValues;
 	}
 }

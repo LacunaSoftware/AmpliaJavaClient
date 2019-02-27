@@ -8,11 +8,9 @@ public enum OrderStatus {
 
 	private String value;
 
-
 	OrderStatus(String value) {
 		this.value = value;
 	}
-
 
 	public String getValue() {
 		return value;

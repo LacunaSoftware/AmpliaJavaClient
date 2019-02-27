@@ -1,9 +1,12 @@
 package com.lacunasoftware.amplia;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
-
-public class PkiBrazilCertificateParametersModel extends CertificateParametersModel {
+@JsonIgnoreProperties(ignoreUnknown = true)
+class PkiBrazilCertificateParametersModel extends CertificateParametersModel {
 	private String name;
 	private String emailAddress;
 	private String cnpj;
@@ -20,123 +23,123 @@ public class PkiBrazilCertificateParametersModel extends CertificateParametersMo
 	private String country;
 	private String phoneNumber;
 
-	public String getName() {
+	@JsonProperty("name")
+	String getName() {
 		return name;
 	}
-
-	public void setName(String name) {
+	void setName(String name) {
 		this.name = name;
 	}
 
-	public String getEmailAddress() {
+	@JsonProperty("emailAddress")
+	String getEmailAddress() {
 		return emailAddress;
 	}
-
-	public void setEmailAddress(String emailAddress) {
+	void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
 
-	public String getCnpj() {
+	@JsonProperty("cnpj")
+	String getCnpj() {
 		return cnpj;
 	}
-
-	public void setCnpj(String cnpj) {
+	void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
 
-	public String getCompanyName() {
+	@JsonProperty("companyName")
+	String getCompanyName() {
 		return companyName;
 	}
-
-	public void setCompanyName(String companyName) {
+	void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
 
-	public String getCpf() {
+	@JsonProperty("cpf")
+	String getCpf() {
 		return cpf;
 	}
-
-	public void setCpf(String cpf) {
+	void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
-	public String getBirthDate() {
+	@JsonProperty("birthDate")
+	String getBirthDate() {
 		return birthDate;
 	}
-
-	public void setBirthDate(String birthDate) {
+	void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
 
-	public String getOabUF() {
+	@JsonProperty("oabUF")
+	String getOabUF() {
 		return oabUF;
 	}
-
-	public void setOabUF(String oabUF) {
+	void setOabUF(String oabUF) {
 		this.oabUF = oabUF;
 	}
 
-	public String getOabNumero() {
+	@JsonProperty("oabNumero")
+	String getOabNumero() {
 		return oabNumero;
 	}
-
-	public void setOabNumero(String oabNumero) {
+	void setOabNumero(String oabNumero) {
 		this.oabNumero = oabNumero;
 	}
 
-	public String getRgEmissor() {
+	@JsonProperty("rgEmissor")
+	String getRgEmissor() {
 		return rgEmissor;
 	}
-
-	public void setRgEmissor(String rgEmissor) {
+	void setRgEmissor(String rgEmissor) {
 		this.rgEmissor = rgEmissor;
 	}
 
-	public String getRgEmissorUF() {
+	@JsonProperty("rgEmissorUF")
+	String getRgEmissorUF() {
 		return rgEmissorUF;
 	}
-
-	public void setRgEmissorUF(String rgEmissorUF) {
+	void setRgEmissorUF(String rgEmissorUF) {
 		this.rgEmissorUF = rgEmissorUF;
 	}
 
-	public String getRgNumero() {
+	@JsonProperty("rgNumero")
+	String getRgNumero() {
 		return rgNumero;
 	}
-
-	public void setRgNumero(String rgNumero) {
+	void setRgNumero(String rgNumero) {
 		this.rgNumero = rgNumero;
 	}
 
-	public List<String> getOrganizationUnits() {
+	@JsonProperty("organizationUnits")
+	List<String> getOrganizationUnits() {
 		return organizationUnits;
 	}
-
-	public void setOrganizationUnits(List<String> organizationUnits) {
+	void setOrganizationUnits(List<String> organizationUnits) {
 		this.organizationUnits = organizationUnits;
 	}
 
-	public String getOrganization() {
+	@JsonProperty("organization")
+	String getOrganization() {
 		return organization;
 	}
-
-	public void setOrganization(String organization) {
+	void setOrganization(String organization) {
 		this.organization = organization;
 	}
 
-	public String getCountry() {
+	@JsonProperty("country")
+	String getCountry() {
 		return country;
 	}
-
-	public void setCountry(String country) {
+	void setCountry(String country) {
 		this.country = country;
 	}
 
-	public String getPhoneNumber() {
+	@JsonProperty("phoneNumber")
+	String getPhoneNumber() {
 		return phoneNumber;
 	}
-
-	public void setPhoneNumber(String phoneNumber) {
+	void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 }

@@ -11,10 +11,10 @@ class CertificateModel extends BaseCertificateModel {
 
 
 	@JsonProperty("parameters")
-	public Object getParameters() {
+	Object getParameters() {
 		return parameters;
 	}
-	public void setParameters(Object parameters) {
+	void setParameters(Object parameters) {
 		this.parameters = parameters;
 	}
 }

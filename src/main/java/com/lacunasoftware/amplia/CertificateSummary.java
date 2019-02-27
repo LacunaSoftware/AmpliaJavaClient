@@ -1,8 +1,6 @@
 package com.lacunasoftware.amplia;
 
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -21,7 +19,7 @@ public class CertificateSummary {
 	private CertificateKinds kind;
 	private CertificateFormats format;
 
-	public CertificateSummary(CertificateSummaryModel model) {
+	CertificateSummary(CertificateSummaryModel model) {
 		this.id = model.getId();
 		this.subscriptionId = model.getSubscriptionId();
 		this.caId = model.getCAId();
