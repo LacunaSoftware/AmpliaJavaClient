@@ -15,7 +15,7 @@ public class PkiBrazilCertificateParameters extends CertificateParameters {
 	private String rgEmissor;
 	private String rgEmissorUF;
 	private String rgNumero;
-	private List<String> organizationUnits;
+	private List<String> organizationalUnits;
 	private String organization;
 	private String country;
 	private String phoneNumber;
@@ -38,7 +38,7 @@ public class PkiBrazilCertificateParameters extends CertificateParameters {
 		this.rgEmissor = model.getRgEmissor();
 		this.rgEmissorUF = model.getRgEmissorUF();
 		this.rgNumero = model.getRgNumero();
-		this.organizationUnits = model.getOrganizationUnits();
+		this.organizationalUnits = model.getOrganizationalUnits();
 		this.organization = model.getOrganization();
 		this.country = model.getCountry();
 		this.phoneNumber = model.getPhoneNumber();
@@ -157,12 +157,12 @@ public class PkiBrazilCertificateParameters extends CertificateParameters {
 		this.rgNumero = rgNumero;
 	}
 
-	public List<String> getOrganizationUnits() {
-		return organizationUnits;
+	public List<String> getOrganizationalUnits() {
+		return organizationalUnits;
 	}
 
-	public void setOrganizationUnits(List<String> organizationUnits) {
-		this.organizationUnits = organizationUnits;
+	public void setOrganizationalUnits(List<String> organizationalUnits) {
+		this.organizationalUnits = organizationalUnits;
 	}
 
 	public String getOrganization() {
@@ -204,7 +204,7 @@ public class PkiBrazilCertificateParameters extends CertificateParameters {
 		model.setRgEmissor(rgEmissor);
 		model.setRgEmissorUF(rgEmissorUF);
 		model.setRgNumero(rgNumero);
-		model.setOrganizationUnits(organizationUnits);
+		model.setOrganizationalUnits(organizationalUnits);
 		model.setOrganization(organization);
 		model.setCountry(country);
 		model.setPhoneNumber(phoneNumber);

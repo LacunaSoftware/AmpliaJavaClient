@@ -47,7 +47,7 @@ class LatinusCertificateParametersModel extends CertificateParametersModel {
 	List<String> getOrganizationalUnits() {
 		return organizationalUnits;
 	}
-	void setorganizationalUnits(List<String> organizationalUnits) {
+	void setOrganizationalUnits(List<String> organizationalUnits) {
 		this.organizationalUnits = organizationalUnits;
 	}
 

@@ -18,7 +18,7 @@ class PkiBrazilCertificateParametersModel extends CertificateParametersModel {
 	private String rgEmissor;
 	private String rgEmissorUF;
 	private String rgNumero;
-	private List<String> organizationUnits;
+	private List<String> organizationalUnits;
 	private String organization;
 	private String country;
 	private String phoneNumber;
@@ -111,12 +111,12 @@ class PkiBrazilCertificateParametersModel extends CertificateParametersModel {
 		this.rgNumero = rgNumero;
 	}
 
-	@JsonProperty("organizationUnits")
-	List<String> getOrganizationUnits() {
-		return organizationUnits;
+	@JsonProperty("organizationalUnits")
+	List<String> getOrganizationalUnits() {
+		return organizationalUnits;
 	}
-	void setOrganizationUnits(List<String> organizationUnits) {
-		this.organizationUnits = organizationUnits;
+	void setOrganizationalUnits(List<String> organizationalUnits) {
+		this.organizationalUnits = organizationalUnits;
 	}
 
 	@JsonProperty("organization")
