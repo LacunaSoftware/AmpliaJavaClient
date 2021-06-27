@@ -6,7 +6,11 @@ public enum CertificateFormats {
 	CNB("Cnb"),
 	CNB_CA("CnbCA"),
 	CIE("Cie"),
-	ARISP("Arisp");
+	ARISP("Arisp"),
+	CUSTOM("Custom"),
+	PRIVATE_ID("PrivateID"),
+	ECUADOR_BCE("EcuadorBce"),
+	LATINUS("Latinus");
 
 	private String value;
 

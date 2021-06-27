@@ -28,6 +28,10 @@ public class AmpliaClient {
 		typeApiRoutes.put(CertificateFormats.CNB_CA, "cnb-ca");
 		typeApiRoutes.put(CertificateFormats.CIE, "cie");
 		typeApiRoutes.put(CertificateFormats.ARISP, "arisp");
+		typeApiRoutes.put(CertificateFormats.CUSTOM, "custom");
+		typeApiRoutes.put(CertificateFormats.PRIVATE_ID, "private-id");
+		typeApiRoutes.put(CertificateFormats.ECUADOR_BCE, "bce");
+		typeApiRoutes.put(CertificateFormats.LATINUS, "latinus");
 	}
 
 	protected RestClient getRestClient() {
@@ -192,6 +196,8 @@ public class AmpliaClient {
 			certFormat = CertificateFormats.CIE;
 		} else if (parametersType.equals(ArispCertificateParameters.class)) {
 			certFormat = CertificateFormats.ARISP;
+		} else if (parametersType.equals(LatinusCertificateParameters.class)) {
+			certFormat = CertificateFormats.LATINUS;
 		} else {
 			throw new IllegalArgumentException(String.format("The certificate parameters type not supported: %s", parametersType.toString()));
 		}
