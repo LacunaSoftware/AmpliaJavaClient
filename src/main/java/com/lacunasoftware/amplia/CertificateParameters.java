@@ -60,6 +60,9 @@ public abstract class CertificateParameters {
 			case Arisp:
 				ArispCertificateParametersModel arispModel = mapper.convertValue(value, ArispCertificateParametersModel.class);
 				return new ArispCertificateParameters(arispModel);
+			case Latinus:
+				LatinusCertificateParametersModel latinusModel = mapper.convertValue(value, LatinusCertificateParametersModel.class);
+				return new LatinusCertificateParameters(latinusModel);
 		}
 
 		throw new InvalidParameterException(String.format("Certificate format not supported: %s", format.toString()));
