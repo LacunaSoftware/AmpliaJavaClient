@@ -12,3 +12,7 @@ out/
 .vscode/
 gradle.properties
 .idea/
+
+# GPG keys
+*.gpg
+*.asc
