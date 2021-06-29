@@ -7,6 +7,12 @@ import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 class LatinusCertificateParametersModel extends CertificateParametersModel {
+
+	enum LatinusCertificateTypes {
+		PersonaNatural, PersonaJuridica
+	}
+
+	private LatinusCertificateTypes type;
 	private String name;
 	private String emailAddress;
 	private String companyName;
@@ -18,6 +24,14 @@ class LatinusCertificateParametersModel extends CertificateParametersModel {
 	private String passport;
 	private String ruc;
 	private String rup;
+
+	@JsonProperty("type")
+	public LatinusCertificateTypes getType() {
+		return type;
+	}
+	public void setType(LatinusCertificateTypes type) {
+		this.type = type;
+	}
 
 	@JsonProperty("name")
 	String getName() {

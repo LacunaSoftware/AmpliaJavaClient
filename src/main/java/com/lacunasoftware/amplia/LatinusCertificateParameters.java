@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class LatinusCertificateParameters extends CertificateParameters {
+	private LatinusCertificateTypes type;
 	private String name;
 	private String emailAddress;
 	private String cedulaDeIdentidad;
@@ -24,6 +25,20 @@ public class LatinusCertificateParameters extends CertificateParameters {
 
 	LatinusCertificateParameters(LatinusCertificateParametersModel model) {
 		this();
+		
+		if (model.getType() != null) {
+			switch (model.getType()) {
+				case PersonaNatural:
+					this.type = LatinusCertificateTypes.PERSONA_NATURAL;
+					break;
+				case PersonaJuridica:
+					this.type = LatinusCertificateTypes.PERSONA_JURIDICA;
+					break;
+				default:
+					throw new IllegalArgumentException("Invalid value for \"type\" field on LatinusCertificateParameters constructor.");
+			}
+		}
+
 		this.name = model.getName();
 		this.emailAddress = model.getEmailAddress();
 		this.cedulaDeIdentidad = model.getCedulaDeIdentidad();
@@ -37,6 +52,13 @@ public class LatinusCertificateParameters extends CertificateParameters {
 		this.organization = model.getOrganization();
 	}
 
+	public LatinusCertificateTypes getType() {
+		return this.type;
+	}
+
+	public void setType(LatinusCertificateTypes type) {
+		this.type = type;
+	}
 
 	public String getName() {
 		return this.name;
@@ -126,9 +148,11 @@ public class LatinusCertificateParameters extends CertificateParameters {
 		this.organization = organization;
 	}
 
-
 	LatinusCertificateParametersModel toModel() {
 		LatinusCertificateParametersModel model = new LatinusCertificateParametersModel();
+		if (type != null) {
+			model.setType(LatinusCertificateParametersModel.LatinusCertificateTypes.valueOf(type.getValue()));
+		}
 		model.setName(name);
 		model.setEmailAddress(emailAddress);
 		model.setCedulaDeIdentidad(cedulaDeIdentidad);
