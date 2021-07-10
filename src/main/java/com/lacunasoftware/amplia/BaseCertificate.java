@@ -59,6 +59,9 @@ public class BaseCertificate {
 				case Arisp:
 					this.format = CertificateFormats.ARISP;
 					break;
+				case Latinus:
+					this.format = CertificateFormats.LATINUS;
+					break;
 				default:
 					throw new IllegalArgumentException("Invalid value for \"format\" field on BaseCertificate constructor.");
 			}
