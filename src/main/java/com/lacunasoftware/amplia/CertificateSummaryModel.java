@@ -11,7 +11,7 @@ class CertificateSummaryModel {
 		PublicKey, Attribute
 	}
 	public enum CertificateFormats {
-		PkiBrazil, Ssl, Cnb, CnbCA, Cie, Arisp
+		PkiBrazil, Ssl, Cnb, CnbCA, Cie, Arisp, Latinus
 	}
 
 	private String id = null;
