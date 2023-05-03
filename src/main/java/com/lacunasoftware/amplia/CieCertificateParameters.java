@@ -135,7 +135,8 @@ public class CieCertificateParameters extends CertificateParameters {
 
 	@Override
 	CieCertificateParametersModel toModel() {
-		CieCertificateParametersModel model = (CieCertificateParametersModel) super.toModel();
+		CieCertificateParametersModel model = new CieCertificateParametersModel();
+		fillModel(model);
 		model.setName(name);
 		model.setEea(eea);
 		if (birthDate != null) {

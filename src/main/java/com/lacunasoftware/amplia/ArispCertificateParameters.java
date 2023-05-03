@@ -71,7 +71,8 @@ public class ArispCertificateParameters extends CertificateParameters {
 
 	@Override
 	ArispCertificateParametersModel toModel() {
-		ArispCertificateParametersModel model = (ArispCertificateParametersModel) super.toModel();
+		ArispCertificateParametersModel model = new ArispCertificateParametersModel();
+		fillModel(model);
 		model.setNome(nome);
 		model.setCpf(cpf);
 		model.setCartorio(cartorio.toModel());

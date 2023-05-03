@@ -68,9 +68,7 @@ public abstract class CertificateParameters {
 		throw new InvalidParameterException(String.format("Certificate format not supported: %s", format.toString()));
 	}
 
-	CertificateParametersModel toModel() {
-		CertificateParametersModel model = new CertificateParametersModel();
+	protected void fillModel(CertificateParametersModel model) {
 		model.setFormat(CertificateParametersModel.CertificateFormats.valueOf(format.getValue()));
-		return model;
 	}
 }

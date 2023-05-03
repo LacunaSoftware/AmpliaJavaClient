@@ -26,7 +26,8 @@ public class SslCertificateParameters extends CertificateParameters {
 	}
 
 	SslCertificateParametersModel toModel() {
-		SslCertificateParametersModel model = (SslCertificateParametersModel) super.toModel();
+		SslCertificateParametersModel model = new SslCertificateParametersModel();
+		fillModel(model);
 		model.setDnsNames(dnsNames);
 		return model;
 	}
