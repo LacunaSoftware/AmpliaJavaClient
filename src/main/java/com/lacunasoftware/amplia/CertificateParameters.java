@@ -71,4 +71,6 @@ public abstract class CertificateParameters {
 	protected void fillModel(CertificateParametersModel model) {
 		model.setFormat(CertificateParametersModel.CertificateFormats.valueOf(format.getValue()));
 	}
+
+	abstract CertificateParametersModel toModel();
 }

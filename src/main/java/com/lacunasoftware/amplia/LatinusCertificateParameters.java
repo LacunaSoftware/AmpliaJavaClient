@@ -150,6 +150,7 @@ public class LatinusCertificateParameters extends CertificateParameters {
 
 	LatinusCertificateParametersModel toModel() {
 		LatinusCertificateParametersModel model = new LatinusCertificateParametersModel();
+		fillModel(model);
 		if (type != null) {
 			model.setType(LatinusCertificateParametersModel.LatinusCertificateTypes.valueOf(type.getValue()));
 		}
