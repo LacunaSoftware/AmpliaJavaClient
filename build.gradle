@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'eclipse'
     id 'idea'
-    id 'maven'
     id 'maven-publish'
     id 'signing'
 }
@@ -12,82 +11,108 @@ targetCompatibility = 1.7
 
 group = 'com.lacunasoftware.amplia'
 archivesBaseName = 'amplia-client'
-version = '1.1.2'
+version = '1.2.0'
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
 
 repositories {
     mavenCentral()
 }
 
+sourceSets {
+    main.java.srcDirs = ['src/main/java']
+}
+
 dependencies {
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.6.1'
 	testImplementation 'junit:junit:4.12'
 }
 
-task fatJar(type: Jar) {
-    manifest { }
-    baseName = project.name + '-all'
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    with jar
+test {
+    // Enable JUnit 5 (Gradle 4.6+).
+    useJUnitPlatform()
+
+    // Always run tests, even when nothing changed.
+    dependsOn 'cleanTest'
+
+    // Show test results.
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
 }
 
-task javadocJar(type: Jar) {
-    classifier = 'javadoc'
-    from javadoc
-}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
 
-task sourcesJar(type: Jar) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
+            artifactId = 'cloudhub-client'
+            groupId group
+            version version
 
-artifacts {
-    archives javadocJar, sourcesJar
-}
-
-signing {
-    sign configurations.archives
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name 'amplia-client'
-                packaging 'jar'
-                artifactId 'amplia-client'
-                description 'Classes to consume Lacuna Software Amplia'
-                url 'https://github.com/LacunaSoftware/AmpliaJavaClient'
-
-                scm {
-                    connection 'scm:git:git@github.com:LacunaSoftware/AmpliaJavaClient.git'
-                    developerConnection 'scm:git:git@github.com:LacunaSoftware/AmpliaJavaClient.git'
-                    url 'https://github.com/LacunaSoftware/AmpliaJavaClient'
-                }
-
+            // Set the POM properties
+            pom {
+                name = 'amplia-client'
+                packaging = 'jar'
+                artifactId = 'amplia-client'
+                description = 'Classes to consume Lacuna Software Amplia'
+                url = 'https://github.com/LacunaSoftware/AmpliaJavaClient'
                 licenses {
                     license {
-                        name 'Unlicense'
+                        name = "Unilicense"
                     }
                 }
-
+                scm {
+                    connection = 'scm:git:git@github.com:LacunaSoftware/AmpliaJavaClient.git'
+                    developerConnection = 'scm:git:git@github.com:LacunaSoftware/AmpliaJavaClient.git'
+                    url = 'https://github.com/LacunaSoftware/AmpliaJavaClient'
+                }  
                 developers {
                     developer {
-                        id 'ismaelm'
-                        name 'Ismael Medeiros'
-                        email 'IsmaelM@lacunasoftware.com'
+                        id = "DaniloB"
+                        name = "Danilo Bispo"
+                        email = "danilob@lacunasoftware.com"
+                    }
+                    developer {
+                        id = 'ismaelm'
+                        name = 'Ismael Medeiros'
+                        email = 'IsmaelM@lacunasoftware.com'
                     }
                 }
             }
         }
+    }
+    repositories {
+        maven {
+            url determineRepositoryUrl()
+            credentials {
+                username ossrhUsername
+                password ossrhPassword
+            }
+        }
+    }
+}
+
+task execute(type:JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'package.Main'
+}
+
+signing {
+    sign publishing.publications.mavenJava
+    sign configurations.archives
+}
+
+
+def determineRepositoryUrl() {
+    def version = project.version.toString()
+    if (version.endsWith('SNAPSHOT')) {
+        return "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+    } else {
+        return "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
     }
 }
