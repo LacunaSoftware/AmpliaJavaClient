@@ -50,7 +50,7 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
 
-            artifactId = 'cloudhub-client'
+            artifactId = 'amplia-client'
             groupId group
             version version
 

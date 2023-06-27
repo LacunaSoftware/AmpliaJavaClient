@@ -5,8 +5,7 @@ public class CieInstitution {
 	private String city;
 	private String state;
 
-
-	CieInstitution(CieInstitutionModel model) {
+	public CieInstitution(CieInstitutionModel model) {
 		this.name = model.getName();
 		this.city = model.getCity();
 		this.state = model.getState();

@@ -147,7 +147,9 @@ public class CieCertificateParameters extends CertificateParameters {
 		model.setIdNumber(idNumber);
 		model.setIdIssuer(idIssuer);
 		model.setIdIssuerState(idIssuerState);
-		model.setInstitution(institution.toModel());
+		if(institution != null){
+			model.setInstitution(institution.toModel());
+		}
 		model.setDegree(degree);
 		model.setCourse(course);
 		return model;
