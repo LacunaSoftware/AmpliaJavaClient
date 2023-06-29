@@ -191,6 +191,7 @@ public class PkiBrazilCertificateParameters extends CertificateParameters {
 
 	PkiBrazilCertificateParametersModel toModel() {
 		PkiBrazilCertificateParametersModel model = new PkiBrazilCertificateParametersModel();
+		fillModel(model);
 		model.setName(name);
 		model.setEmailAddress(emailAddress);
 		model.setCnpj(cnpj);

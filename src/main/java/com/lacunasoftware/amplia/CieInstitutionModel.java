@@ -6,17 +6,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-class CieInstitutionModel {
+public class CieInstitutionModel {
 	private String name = null;
 	private String city = null;
 	private String state = null;
 
+	public CieInstitutionModel() {
+	}
 
 	@JsonProperty("name")
 	String getName() {
 		return name;
 	}
-	void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -24,7 +26,7 @@ class CieInstitutionModel {
 	String getCity() {
 		return city;
 	}
-	void setCity(String city) {
+	public void setCity(String city) {
 		this.city = city;
 	}
 
@@ -32,7 +34,7 @@ class CieInstitutionModel {
 	String getState() {
 		return state;
 	}
-	void setState(String state) {
+	public void setState(String state) {
 		this.state = state;
 	}
 }
